@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:dustin="http://marxsoftware.blogspot.com/foodxml"
+           targetNamespace="http://marxsoftware.blogspot.com/foodxml"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+    <xs:element name="Food">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Vegetable" type="dustin:Vegetable" />
+                <xs:element ref="dustin:Fruit" />
+                <xs:element name="Dessert" type="dustin:Dessert" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:simpleType name="Vegetable">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Carrot"/>
+            <xs:enumeration value="Squash"/>
+            <xs:enumeration value="Spinach"/>
+            <xs:enumeration value="Celery"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:element name="Fruit">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="Watermelon"/>
+                <xs:enumeration value="Apple"/>
+                <xs:enumeration value="Orange"/>
+                <xs:enumeration value="Grape"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:simpleType name="Dessert">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Pie"/>
+            <xs:enumeration value="Cake"/>
+            <xs:enumeration value="Ice Cream"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
